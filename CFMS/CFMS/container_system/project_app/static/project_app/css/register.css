@@ -1,0 +1,148 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
+    background-size: cover;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(79, 121, 139);
+}
+.container{
+    background-color:rgb(218, 225, 226) ;
+    position: relative;
+    max-width: 900px;
+    width:100% ;
+    border-radius:6px;
+    padding: 30px;
+    margin: 0 15px;
+    box-shadow: 0 5px 10px rgb(79, 121, 139);
+}
+
+.container header{
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    color:rgb(56, 62, 63);
+}
+.container header::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 3px;
+    width: 27px;
+    border-radius: 8px;
+    background-color: rgb(110, 158, 179);
+}
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    background-color:rgb(218, 225, 226) ;
+}
+.container form .details-user{
+    margin-top: 30px;
+}
+
+.container form .details-shipment{
+    margin-top: 30px;
+}
+.container form .title{
+    font-size: 1.3rem;
+    margin-bottom:8px; ;
+    font-weight: 500;
+    margin: 6px 0;
+    color: black;
+    
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-fields{
+    display: flex;
+    width: calc(100% /3 -15px);
+    flex-direction: column;
+    background-color:rgb(218, 225, 226) ;
+    margin: 4px 0;
+}
+
+.input-fields label{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(33, 54, 57);
+}
+.login-class a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(33, 54, 57);
+    justify-content: center;
+}
+.login-class a::before{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(33, 54, 57);
+    justify-content: center;
+}
+.login-class a:active{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(33, 54, 57);
+    justify-content: center;
+}
+.login-class a:hover{
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(33, 54, 57);
+    justify-content: center;
+}
+
+
+.input-fields input{
+    padding: 0 15px;
+    outline: none;
+    font-size: 0.8rem;
+    border-radius: 5px ;
+    border: 1px solid rgb(192, 196, 198);
+    height: 42px;
+    margin: 8px 0;
+    color: rgb(56, 62, 63);
+}
+
+.input-fields input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgb(103, 132, 145);
+
+}
+
+.container form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 150px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgb(79, 121, 139);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 25px;
+    color:  rgb(56, 62, 63);
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+}
+form button:hover{
+    background-color: rgb(193, 203, 204) ;
+}
+form.secActive .form .first{
+    opacity: 0;
+    pointer-events: none;
+}

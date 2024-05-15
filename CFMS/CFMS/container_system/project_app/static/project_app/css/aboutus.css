@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Playfair Display', serif;
+    background: rgb(185, 188, 189);
+    color: rgb(79, 121, 139);
+    
+}
+.container{
+    background-color:rgb(218, 225, 226) ;
+    position: relative;
+    height: 530px;
+    width:460px ;
+    border:3px solid rgb(79, 121, 139);
+    border-radius: 24px;
+    margin: 0 15px;
+    padding: 30px;
+}
+section{
+    min-height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    font-size: 2rem;
+    margin: 2rem 0rem;
+}
+.faq{
+    max-width: 700px;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(79, 121, 139) ;
+    cursor: pointer;
+}
+.question{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.question h3{
+    font-size: 1rem;
+}
+.answer{
+    max-height:0;
+    overflow: hidden;
+}
+.answer{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.4s ease;
+}
+.answer p{
+    padding-top: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+
+}
+.faq.active .answer{
+    max-height: 300px;
+    animation: fade 1s ease-in-out;
+}
+.faq.active svg{
+    transform: rotate(180deg);
+}
+svg{
+    transition: transform 0.5s ease-in;
+}
+#message-input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 1rem;
+    background-color:rgb(218, 225, 226);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 15px;
+    color:  rgb(56, 62, 63);
+    transition: all 0.3s linear;
+    cursor: pointer;
+    text-align: left;
+}
+@keyframes fade {
+    from{
+        opacity: 0;
+        transform: translate(-10px);
+
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container form button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 150px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgb(79, 121, 139);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 25px;
+    color:  rgb(56, 62, 63);
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+}
+form button:hover{
+    background-color: rgb(193, 203, 204) ;
+}
+form.secActive .form .first{
+    opacity: 0;
+    pointer-events: none;
+}

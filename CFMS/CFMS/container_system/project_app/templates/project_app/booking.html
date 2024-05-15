@@ -1,0 +1,6 @@
+<h1>booking page</h1>
+<form action="{% url 'booking' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Book</button>
+</form>

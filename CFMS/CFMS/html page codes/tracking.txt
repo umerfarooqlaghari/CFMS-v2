@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'project_app/css/track.css' %}">
+    <script src="https://kit.fontawesome.com/96547d8381.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>Tracking</title>
+  </head>
+<body>
+    <div class="container">
+      <header>Track your Shipment</header>
+
+
+      <form method="POST" action="{% url 'track' %}">
+        <div class="form first">
+          <div class="details-user">
+            <span class="title"></span>
+             <br>
+            <div class="fields">
+
+              <div class="input-fields">
+                 <!--<label>Booking ID</label>-->
+                 {% csrf_token %}
+                 {{ form.as_p }}
+              <!--<input type="text" placeholder="Booking ID" required>-->
+              </div>
+              
+            </div> <!--feilds end-->
+        </div><!--details-user end-->
+
+              <button class="button">
+                <span class="btnText">Track</span>
+              </button>
+              </div>
+            
+      </div> <!--form-first end-->
+    </form>
+    {% if tracking_info %}
+    <h2>Shipment Details</h2>
+    <p>Booking ID: {{ tracking_info.booking_id }}</p>
+    <p>Cargo Type: {{ tracking_info.cargo_type }}</p>
+    <p>Start Port: {{ tracking_info.start_port }}</p>
+    <p>End Port: {{ tracking_info.end_port }}</p>
+    <p>Distance: {{ tracking_info.distance }}</p>
+    <p>Departure Date: {{ tracking_info.departure_date }}</p>
+    <p>Cost: {{ tracking_info.cost }}</p>
+    <p>Arrival Date: {{ tracking_info.arrival_date }}</p>
+    <p>Status: {{ tracking_info.status }}</p>
+{% endif %}
+</header>
+</div><!--container-->
+ <script>
+   
+ </script>
+</body>
+</html>

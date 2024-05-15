@@ -1,0 +1,9 @@
+'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'CFMS_DJANGO',
+        'USER': 'postgres',
+        'PASSWORD': 'fast1234',
+        'HOST': 'localhost',
+        'PORT': '',
+        
+    }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--{% load static %}-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'project_app/css/login.css' %}">
+    <script src="https://kit.fontawesome.com/96547d8381.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>User Login</title>
+  </head>
+<body>
+    <div class="container">
+      <header>User Login</header>
+
+
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="form first">
+          <div class="details-user">
+            <span class="title"></span>
+             <br>
+            <div class="fields">
+
+              <div class="input-fields">
+                 <label>Username</label>
+                 <input type="text" placeholder="Username" required>
+              </div>
+              <div class="input-fields">
+                <label>Email Address</label>
+                <input type="text" placeholder="Email Address" required>
+              </div>
+
+              <div class="input-fields">
+                <label>Password</label>
+                <input type="Password" placeholder="Password" required>
+              </div>
+            </div> <!--fields end-->
+        </div><!--details-user end-->
+
+              <button class="button">
+                <span class="btnText">Login</span>
+              </button>
+              </div>
+            
+      </div> <!--form-first end-->
+    </form>
+</header>
+</div><!--container-->
+ <script>
+    var btnText = document.getElementById(".button");
+
+      // Add a click event listener to the login button
+      btnText.addEventListener("click", function() {
+        // Display a popup message
+        alert("You have successfully logged in.");
+      });
+ </script>
+</body>
+</html>

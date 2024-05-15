@@ -1,0 +1,125 @@
+index:
+
+
+
+home:
+<h1>welcome to home page</h1>
+
+
+
+register:
+
+
+<h1>  registeration page </h1>
+<h2>Create an account</h2>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+
+  <button type="submit">Register</button>
+</form>
+
+
+booking:
+
+
+<h1>booking page</h1>
+<form action="{% url 'booking' %}" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Book</button>
+</form>
+
+
+
+login:
+<h1>
+    Please Log in to your account! </h1>
+
+<body>
+    <h1>Login</h1>
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+
+
+tracking:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tracking</title>
+</head>
+<body>
+    <h1>Shipment Tracking</h1>
+    <form method="POST" action="{% url 'track' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Track</button>
+    </form>
+
+    {% if tracking_info %}
+        <h2>Shipment Details</h2>
+        <p>Booking ID: {{ tracking_info.booking_id }}</p>
+        <p>Cargo Type: {{ tracking_info.cargo_type }}</p>
+        <p>Start Port: {{ tracking_info.start_port }}</p>
+        <p>End Port: {{ tracking_info.end_port }}</p>
+        <p>Distance: {{ tracking_info.distance }}</p>
+        <p>Departure Date: {{ tracking_info.departure_date }}</p>
+        <p>Cost: {{ tracking_info.cost }}</p>
+        <p>Arrival Date: {{ tracking_info.arrival_date }}</p>
+        <p>Status: {{ tracking_info.status }}</p>
+    {% endif %}
+</body>
+</html>
+
+
+
+details:
+
+
+<h1>Details</h1>
+
+<!-- Display Ports -->
+<h2>Port Availability</h2>
+{% for port in ports %}
+    <div>
+        <h3>{{ port.name }}</h3>
+        {% if port.availability %}
+            <p>Status: Available</p>
+        {% else %}
+            <p>Status: Not Available</p>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No ports available.</p>
+{% endfor %}
+
+
+
+aboutus:
+
+<!-- about_us.html -->
+<h1>About Us</h1>
+
+<!-- Display FAQs -->
+<h2>Frequently Asked Questions</h2>
+{% for faq in faqs %}
+    <div>
+        <h3>{{ faq.query }}</h3>
+        <p>Posted by: {{ faq.user_name }}</p>
+        <p>Date: {{ faq.query_Date }}</p>
+    </div>
+{% empty %}
+    <p>No FAQs available.</p>
+{% endfor %}
+
+<!-- FAQ Form -->
+<h2>Have a Query or Response?</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>

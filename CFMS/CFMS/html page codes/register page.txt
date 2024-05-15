@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--{% load static %}-->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'project_app/css/register.css' %}">
+    <script src="https://kit.fontawesome.com/96547d8381.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>User Registration</title>
+  </head>
+<body>
+    <div class="container">
+      <header>User Registration</header>
+
+
+      <form action="" method="POST">
+        <div class="form first">
+          <div class="details-user">
+            <span class="title">User Details</span>
+             <br>
+            <div class="fields">
+
+              <div class="input-fields">
+                 <label>Username</label>
+                 <input type="text" placeholder="Username" required>
+              </div>
+
+              <div class="input-fields">
+                <label>Email Address</label>
+                <input type="text" placeholder="Email Address" required>
+              </div>
+
+              <div class="input-fields">
+                <label>Password</label>
+                <input type="Password" placeholder="Password" required>
+              </div>
+              <div class="input-fields">
+                <label>Location</label>
+                <input type="Location" placeholder="Location" required>
+              </div>
+            </div> <!--feilds end-->
+        </div><!--details-user end-->
+
+      <!--shipment details part-->
+      <div class="details-shipment">
+        <span class="title"></span>
+         <br>
+        <div class="fields">
+
+          <div class="input-fields">
+             <label>Name</label>
+             <input type="text" placeholder="Name" required>
+          </div>
+
+          <div class="input-fields">
+            <label>Phone Number-with hypen</label>
+            <input type="tel" placeholder="Phone Number" pattern="[0-9]{4}-[0-9]{7}"  required>
+          </div>
+
+          <div class="input-fields">
+            <label>Confirm Password</label>
+            <input type="Password" placeholder="Confirm Password" required>
+          </div>
+         
+        
+
+    <button class="button">
+      <span class="btnText">Register</span>
+    </button>
+    </div> <!--feilds end-->
+</div>            <!--shipment-user end-->
+
+
+    
+<div class="details-shipment">
+    <span class="title"></span>
+     <br>
+    <div class="fields">
+    
+    <br>
+    <div class="login-class">
+        <a href="/login">Already have an account</a>
+    </div>
+</div>
+</div>
+      </div> <!--form-first end-->
+      {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+</header>
+</div><!--container-->
+ <script src="script.js"></script>
+</body>
+</html>
+
+<script>
+    
+
+
+</script>
+</body>
+</html>

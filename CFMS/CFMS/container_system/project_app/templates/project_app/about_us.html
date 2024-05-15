@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>FAQ</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'project_app/css/about_us.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        section {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .title {
+            text-align: center;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .faq {
+            margin-bottom: 30px;
+        }
+
+        .question {
+            cursor: pointer;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        .question h3 {
+            margin: 0;
+            color: #333;
+            font-size: 18px;
+        }
+
+        .question svg {
+            float: right;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease;
+        }
+
+        .answer {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .answer p {
+            margin: 0;
+            color: #555;
+        }
+
+        .faq.open .question {
+            background-color: #f9f9f9;
+        }
+
+        .faq.open .question svg {
+            transform: rotate(180deg);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0,         0.1);
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        form input[type="text"],
+        form input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h2 class="title">FAQs</h2>
+        <div class="faq">
+            <div class="question">
+                <h3>What is a container freight management system?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="darkgray" stroke-width="7" stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>A container freight management system is a software solution that helps companies manage their shipping and logistics operations by optimizing the movement of cargo across different modes of transportation, tracking shipments in real-time, and streamlining communication between different stakeholders in the supply chain.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>How do I get started with a container freight management system?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="darkgray" stroke-width="7" stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>To get started, you will need to select a software provider that meets your specific business needs. Once you have selected a provider, you either register yourself if you haven't or log in if you already have an account. Then you can see all your details, book your shipment, and track its location.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>How do I use a container freight management system to manage my shipments?</h3>
+                <svg width="15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="darkgray" stroke-width="7" stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>To use our system, after logging in or registering yourself, you will have to enter your details regarding your shipment such as the source port, destination port, weight, country, and type of shipment. It will generate the cost, the tracking ID through which you can track the shipment, and the predicted time of delivery.</p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>How does a container freight management system help me save money on shipping?</h3>
+                <svg width                 "15" height="10" viewBox="0 0 42 25">
+                    <path d="M3 3L21 21L39 3" stroke="darkgray" stroke-width="7" stroke-linecap="round"></path>
+                </svg>
+            </div>
+            <div class="answer">
+                <p>A container freight management system can help you save money on shipping by optimizing the routing and scheduling of your shipments, identifying the most cost-effective carriers and modes of transportation, and reducing the risk of errors and delays that can result in additional costs such as fines, penalties, and lost business.</p>
+            </div>
+        </div>
+    </section>
+
+    {% for faq in faqs %}
+        <div>
+            <h3>{{ faq.query }}</h3>
+            <p>Posted by: {{ faq.user_name }}</p>
+            <p>Date: {{ faq.query_Date }}</p>
+        </div>
+    {% empty %}
+        <p>No FAQs available.</p>
+    {% endfor %}
+
+    <!-- FAQ Form -->
+    <h2>Have a Query or Response?</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
